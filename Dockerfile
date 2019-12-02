@@ -4,5 +4,6 @@ WORKDIR homeassistant
 RUN source bin/activate
 RUN python3 -m pip install homeassistant
 RUN ls -lanR
-USER 2000
+VOLUME /opt/app-root/src/.homeassistant
+EXPOSE 8123
 ENTRYPOINT ["hass" , "--open-ui"]

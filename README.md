@@ -30,7 +30,7 @@ docker push default-route-openshift-image-registry.apps.us-east-2.starter.opensh
 ### Deploy the app
 ```
 oc new-app openshift-homeassistant --name=hass
-oc expose hass
+oc create route edge --service=hass --port=8123-tcp
 ```
 
 
